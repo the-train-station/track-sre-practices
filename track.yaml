@@ -1,0 +1,11 @@
+slug: sre-practices
+title: SRE Practices
+description: Site reliability engineering and operational excellence
+icon: Activity
+color: blue
+tier: free
+lessons:
+  - { order: 1, dir: lesson-01-awesome-sre-curated-resource-list, tier: free }
+  - { order: 2, dir: lesson-02-google-sre-book-site-reliability-engineering, tier: free }
+  - { order: 3, dir: lesson-03-implementing-slos-google-cloud, tier: free }
+  - { order: 4, dir: lesson-04-incident-management-for-operations-pagerduty, tier: free }
