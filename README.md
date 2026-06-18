@@ -6,16 +6,13 @@
 Site reliability engineering and operational excellence.
 
 Part of [Train Station](https://github.com/jon-the-dev/saas-train-station), a tiered
-learning platform. This repo holds the **free** lessons for this track. **6 additional
-premium lessons** — AWS Observability Workshop, Chaos Engineering with Litmus,
-Google SRE Workbook, Observability Engineering, and more — are available in the
-Train Station app.
+learning platform. This repo holds the **free** lessons for this track. **6 additional premium lessons** — AWS Observability Workshop, Chaos Engineering with Litmus, Google SRE Workbook, Grafana + Prometheus Monitoring Stack, and more — are available in the Train Station app.
 
 ## Lessons
 
 | # | Lesson | Type | Level | Source |
 |---|--------|------|-------|--------|
-| 1 | [Awesome SRE – Curated Resource List](lesson-01-awesome-sre-curated-resource-list/) | Repo | Beginner | [GitHub](https://github.com/dastergon/awesome-sre) |
+| 1 | [Awesome SRE - Curated Resource List](lesson-01-awesome-sre-curated-resource-list/) | Repo | Beginner | [GitHub](https://github.com/dastergon/awesome-sre) |
 | 2 | [Google SRE Book (Site Reliability Engineering)](lesson-02-google-sre-book-site-reliability-engineering/) | Whitepaper | Intermediate | [Google](https://sre.google/sre-book/table-of-contents/) |
 | 3 | [Implementing SLOs (Google Cloud)](lesson-03-implementing-slos-google-cloud/) | Lab | Intermediate | [Google](https://docs.cloud.google.com/monitoring/slo-monitoring) |
 | 4 | [Incident Management for Operations (PagerDuty)](lesson-04-incident-management-for-operations-pagerduty/) | Whitepaper | Intermediate | [PagerDuty](https://www.pagerduty.com/resources/incident-management-response/learn/what-is-incident-management/) |
