@@ -1,0 +1,90 @@
+groups:
+  - name: sli_recording_rules
+    interval: 5s
+    rules:
+      # Availability SLI: ratio of non-5xx requests to total requests
+      - record: sli:http_requests:availability
+        expr: |
+          sum(rate(http_requests_total{status!~"5.."}[5m]))
+          /
+          sum(rate(http_requests_total[5m]))
+
+      # Latency SLI: ratio of requests under 300ms threshold
+      - record: sli:http_requests:latency_good_ratio
+        expr: |
+          sum(rate(http_request_duration_seconds_bucket{le="0.3"}[5m]))
+          /
+          sum(rate(http_request_duration_seconds_count[5m]))
+
+  - name: error_budget_rules
+    interval: 15s
+    rules:
+      # Error budget remaining (using 10-minute window for lab speed; represents 30-day in production)
+      # SLO target: 99.5% availability
+      - record: sli:error_budget:availability_remaining
+        expr: |
+          1 - (
+            (1 - sli:http_requests:availability)
+            /
+            (1 - 0.995)
+          )
+
+      # Error budget remaining for latency SLO target: 99%
+      - record: sli:error_budget:latency_remaining
+        expr: |
+          1 - (
+            (1 - sli:http_requests:latency_good_ratio)
+            /
+            (1 - 0.99)
+          )
+
+  - name: burn_rate_rules
+    interval: 5s
+    rules:
+      # 1-hour burn rate for availability
+      - record: sli:burn_rate:availability_1h
+        expr: |
+          (
+            sum(rate(http_requests_total{status=~"5.."}[1h]))
+            /
+            sum(rate(http_requests_total[1h]))
+          )
+          /
+          (1 - 0.995)
+
+      # 6-hour burn rate for availability
+      - record: sli:burn_rate:availability_6h
+        expr: |
+          (
+            sum(rate(http_requests_total{status=~"5.."}[6h]))
+            /
+            sum(rate(http_requests_total[6h]))
+          )
+          /
+          (1 - 0.995)
+
+      # 1-hour burn rate for latency
+      - record: sli:burn_rate:latency_1h
+        expr: |
+          (
+            1 - (
+              sum(rate(http_request_duration_seconds_bucket{le="0.3"}[1h]))
+              /
+              sum(rate(http_request_duration_seconds_count[1h]))
+            )
+          )
+          /
+          (1 - 0.99)
+
+      # 6-hour burn rate for latency
+      - record: sli:burn_rate:latency_6h
+        expr: |
+          (
+            1 - (
+              sum(rate(http_request_duration_seconds_bucket{le="0.3"}[6h]))
+              /
+              sum(rate(http_request_duration_seconds_count[6h]))
+            )
+          )
+          /
+          (1 - 0.99)
