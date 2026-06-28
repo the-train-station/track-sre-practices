@@ -78,6 +78,32 @@ Keep notes on why each resource was selected and what problem it helps you solve
 
 Use Awesome SRE as a navigation hub each time you hit a new reliability challenge. If your team starts formal incident reviews, return to the incident management section. If you are deploying Prometheus or Grafana, revisit the observability links. The value of the repository increases when you use it repeatedly at the point of need.
 
+## Deliverable
+
+Create a reliability reading queue and action backlog for one service you understand.
+
+Use this worksheet:
+
+| Theme | Selected resource | Why it matters now | Practice artifact | Backlog action |
+|-------|-------------------|--------------------|-------------------|----------------|
+| SLOs/error budgets |  |  | Draft SLI/SLO note |  |
+| Observability |  |  | Dashboard or signal inventory |  |
+| Incidents/postmortems |  |  | Playbook or review template |  |
+| Toil/automation |  |  | Toil candidate list |  |
+
+Review criteria:
+
+- The queue has three to five resources, each tied to a real reliability question rather than generic curiosity.
+- Every selected resource produces an artifact you can inspect: a note, checklist, dashboard sketch, runbook update, or backlog item.
+- The backlog action includes an owner, expected impact, and a small next step that could fit into one sprint.
+- At least one action connects to a user-facing reliability outcome such as fewer pages, faster recovery, clearer SLOs, or safer releases.
+
+Reflection questions:
+
+- Which selected resource would change an operational decision this week?
+- Which reliability theme is overrepresented in your queue, and which one is missing?
+- What evidence would show that this reading queue improved the service rather than just produced notes?
+
 ## Practice Notes
 
 - Treat the repository as source material to inspect, not just clone. Review the README, release history, examples, issues, license, and maintenance signals before deciding whether to reuse it.

@@ -84,6 +84,44 @@ It is also useful to track a small set of health metrics such as pages per on-ca
 
 Convert repeated manual response steps into runbooks or automation, such as rollback scripts, feature flag toggles, or canary abort commands. Periodically test escalation paths and notification hygiene as well. Incident management quality decays if the workflow is never exercised until a real outage occurs.
 
+## Deliverable
+
+Create an incident lifecycle playbook, run a 30-minute tabletop, and review the follow-up actions.
+
+Playbook template:
+
+| Section | Learner answer |
+|---------|----------------|
+| Incident severities |  |
+| Declaration path |  |
+| Source-of-truth channel/document |  |
+| Incident Commander duties |  |
+| Communications lead duties |  |
+| First 15 minutes checklist |  |
+| Recovery criteria |  |
+| Post-incident review trigger |  |
+
+30-minute tabletop:
+
+1. Minute 0-5: declare a scenario such as login failures after a deploy and assign roles.
+2. Minute 5-15: inspect the symptom, choose a mitigation, and post the first stakeholder update.
+3. Minute 15-25: decide whether to roll back, disable a feature, scale capacity, or continue investigation.
+4. Minute 25-30: declare recovery criteria and capture three follow-up actions.
+
+Action-item review rubric:
+
+| Score | Criteria |
+|-------|----------|
+| 3 | Action prevents, detects, or mitigates a repeat incident; has owner, due date, and validation evidence. |
+| 2 | Action is useful but needs sharper scope, ownership, or proof of completion. |
+| 1 | Action is vague, blame-oriented, cosmetic, or unlikely to change future outcomes. |
+
+Reflection questions:
+
+- Which decision in the tabletop created the most ambiguity?
+- Which update would you send to customers versus internal stakeholders?
+- Which follow-up action reduces future risk the most, and how will you verify it worked?
+
 ## Practice Notes
 
 - Convert reading into decisions. Pull out three recommendations, rate whether your current or sample workload follows them, and write the gap as an actionable backlog item.

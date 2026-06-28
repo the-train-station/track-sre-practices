@@ -9,9 +9,3 @@ lessons:
   - { order: 2, dir: lesson-02-google-sre-book-site-reliability-engineering, tier: free }
   - { order: 3, dir: lesson-03-implementing-slos-google-cloud, tier: free }
   - { order: 4, dir: lesson-04-incident-management-for-operations-pagerduty, tier: free }
-  - { order: 5, dir: lesson-05-observability-engineering, tier: premium }
-  - { order: 6, dir: lesson-06-aws-observability-workshop, tier: premium }
-  - { order: 7, dir: lesson-07-chaos-engineering, tier: premium }
-  - { order: 8, dir: lesson-08-oncall-toil-reduction, tier: premium }
-  - { order: 9, dir: lesson-09-postmortems-reliability-culture, tier: premium }
-  - { order: 10, dir: lesson-10-error-budgets-progressive-delivery, tier: premium }
