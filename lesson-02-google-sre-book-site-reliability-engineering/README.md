@@ -85,6 +85,32 @@ Small applied changes help the book become a working guide rather than an academ
 
 Do not treat this as one-time reading. Early in your learning, the measurement and incident chapters will matter most. As your scope grows, chapters on capacity planning, overload management, and organizational scaling become more valuable. Re-reading the book after you have handled real production incidents will surface much more nuance than the first pass.
 
+## Deliverable
+
+Create an applied reliability improvement plan from the chapters you read.
+
+Use this worksheet:
+
+| Chapter or concept | Current behavior | Reliability gap | Evidence to collect | Small improvement | Tradeoff |
+|--------------------|------------------|-----------------|---------------------|-------------------|----------|
+| SLIs/SLOs |  |  |  |  |  |
+| Monitoring/alerting |  |  |  |  |  |
+| Incident response |  |  |  |  |  |
+| Toil/automation |  |  |  |  |  |
+
+Review criteria:
+
+- The plan translates at least three SRE book ideas into concrete changes for one service or team workflow.
+- Each improvement includes evidence you would collect before and after the change.
+- Tradeoffs are explicit, such as alert sensitivity versus noise, reliability versus feature velocity, or automation effort versus toil saved.
+- The plan names one decision that should be revisited after real incident or SLO data is available.
+
+Reflection questions:
+
+- Which chapter changed how you would prioritize reliability work?
+- Where would your team resist the recommendation, and what data would make the discussion easier?
+- Which proposed improvement is small enough to try without reorganizing the team?
+
 ## Practice Notes
 
 - Convert reading into decisions. Pull out three recommendations, rate whether your current or sample workload follows them, and write the gap as an actionable backlog item.

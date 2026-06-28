@@ -80,6 +80,46 @@ Trigger a safe test, such as a small amount of injected latency or a controlled 
 
 If you use Anthos Service Mesh, prefer Envoy and mesh-level metrics for consistent request accounting across services. Start with route-level SLIs for the user-critical paths, then expand to service-level SLOs once the request accounting is stable. Be careful not to count retries as success unless that truly matches what users experience.
 
+## Deliverable
+
+Produce an SLO definition worksheet and a small burn-rate exercise for one user journey.
+
+SLO worksheet:
+
+| Field | Learner answer |
+|-------|----------------|
+| User journey |  |
+| User-visible success condition |  |
+| SLI type and metric source |  |
+| Good events filter |  |
+| Total events filter |  |
+| Target and window |  |
+| Error budget |  |
+| Fast-burn alert |  |
+| Slow-burn alert |  |
+| Dashboard panels |  |
+| First response action |  |
+
+Burn-rate exercise:
+
+1. Assume a 99.9% availability SLO over 30 days.
+2. Calculate the monthly error budget as `0.1%` of total requests.
+3. Pick a traffic volume, then calculate how many bad requests would consume 10%, 50%, and 100% of the budget.
+4. Describe what the fast-burn and slow-burn alerts should ask the responder to do.
+
+Review criteria:
+
+- The SLI measures user experience, not only an internal host or container metric.
+- Good and total event definitions are precise enough that another engineer could implement them.
+- Alert thresholds include an expected response, route, and urgency.
+- The dashboard links SLO state to supporting signals that help explain likely causes.
+
+Reflection questions:
+
+- What user harm is hidden if you choose the wrong SLI?
+- What product or release decision should change when half the budget is gone?
+- Which part of the worksheet would you validate first in a staging environment?
+
 ## Practice Notes
 
 - Run hands-on work in a sandbox and keep a short lab log with commands, screenshots or outputs, resources created, cleanup steps, and the one pattern you would reuse in production.
